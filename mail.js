@@ -1,8 +1,12 @@
 // The Nodemailer module makes it easy to send emails from your computer.
 
 const nodemailer = require('nodemailer');
+
+// to keep sensitive data we need dotenv module
 require('dotenv').config();
 
+
+// nodemailer.createTransport(): Creates a transport for sending emails.
 
 let transporter = nodemailer.createTransport({
 
@@ -21,15 +25,15 @@ let transporter = nodemailer.createTransport({
 
 let mailoptions = {
 
-    from: process.env.EMAIL ,
-    to: 'xyz@gmail.com',
-    subject: 'Regarding application of intern',
-    html: '<h1> Hello </h1>'
+    from: process.env.EMAIL , // sender mail
+    to: 'rawatsujal670@gmail.com',      // reciever mail
+    subject: 'application for holiday', // mail subject
+    html: 'I kindly beg to say that please grant me leave of 2 days' // mail body
 }
 
 
 // sending mail
-
+// sendMail(mailoptions, callback): Sends the email.
 transporter.sendMail(mailoptions, (err,info) => {
 
     if(err) console.log('error: ', err.message);
