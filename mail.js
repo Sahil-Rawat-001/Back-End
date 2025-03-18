@@ -22,7 +22,7 @@ let transporter = nodemailer.createTransport({
 let mailoptions = {
 
     from: process.env.EMAIL ,
-    to: 'rawatsahil079@gmail.com',
+    to: 'xyz@gmail.com',
     subject: 'Regarding application of intern',
     html: '<h1> Hello </h1>'
 }
