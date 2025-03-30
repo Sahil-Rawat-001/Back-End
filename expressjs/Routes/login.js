@@ -1,13 +1,21 @@
-const express = require('express')
+const express = require('express');
 
-// this will create a router object
-const router  =  express.Router();
+const router  = express.Router();
 
 
-// handling requests using router
-router.get( '/login', (req,res,next) => {
+router.get('/login', (req,res) => {
 
-    res.send('This is hello from login');
+    try{
+
+        res.status(200).send('hello from login page');
+    } catch (error){
+
+        console.log(`Error: ${error}`);
+        res.status(400).json({err: 'Not found'});
+    }
 });
 
+
 module.exports = router;
+
+
